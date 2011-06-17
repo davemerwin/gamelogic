@@ -1,0 +1,6 @@
+*.pyc
+*.DS_Store
+*~
+.svn
+whoosh/
+*.sass-cache*
