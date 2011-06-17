@@ -1,0 +1,1 @@
+A way to build game content logic
