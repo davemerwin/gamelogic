@@ -1,0 +1,6 @@
+mercurial
+Django
+-e hg+http://bitbucket.org/andrewgodwin/south/#egg=south
+-e svn+http://django-oembed.googlecode.com/svn/trunk/#egg=oembed
+docutils
+textile
