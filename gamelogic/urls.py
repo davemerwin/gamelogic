@@ -1,17 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
-
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'gamelogic.views.home', name='home'),
-    # url(r'^gamelogic/', include('gamelogic.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^(?P<slug>\d+)/edit/$', views.story_edit, name='story_edit'),
+    url(r'^(?P<slug>\d+)/$', views.story_detail, name='story_detail'),
+    url(r'^$', views.story_list, name="story_list"),
 )

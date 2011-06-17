@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% endblock %}</title>
+	<meta name="author" content="Dave Merwin">
+</head>
+<body>
+    
+        <div id="content">
+        
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+    
+            {% if user.is_authenticated %}            
+                <section>
+                    {% block content %}{% endblock %}
+                </section>
+            {% endif %}
+                        
+        </div>
+    
+</body>
+</html>

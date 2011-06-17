@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.flatpages',
     'django.contrib.markup',
+    'story',
 )
 LANGUAGE_CODE = 'en-us'
 LOGGING = {

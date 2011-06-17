@@ -6,18 +6,18 @@ from datetime import datetime
 
 class Story(models.Model):
     """ The Story Object """
-    key = models.CharField(blank=True, max_length=100)
-    title = models.CharField(blank=True, max_length=100)
+    key = models.CharField(max_length=100)
+    title = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
-    parent = models.ManyToManyField(Story)
-    child = models.ManyToManyField(Story)
+    parent = models.ManyToManyField('self')
+    child = models.ManyToManyField('self')
     editorial_alpha = models.BooleanField(default=False)
     science_alpha = models.BooleanField(default=False)
     editorial_beta = models.BooleanField(default=False)
     science_beta = models.BooleanField(default=False)
     editorial_gold = models.BooleanField(default=False)
     science_gold = models.BooleanField(default=False)
-    slug = models.CharField(max_length=150, unique=True)
+    slug = models.CharField(max_length=200, unique=True)
     created = models.DateTimeField(_('created'), default=datetime.now, blank=True)
     modified = models.DateTimeField(_('modified'), blank=True)
     
@@ -31,4 +31,8 @@ class Story(models.Model):
         super(Story, self).save(force_insert, force_update)
     
     def __unicode__(self):
-        return self.title
+        return self.slug
+        
+    @models.permalink
+    def get_absolute_url(self):
+        return ('story_detail', (), {'slug': self.self})
