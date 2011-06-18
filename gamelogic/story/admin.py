@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gamelogic.story.models import Story
+from story.models import Story
     
 class StoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('key',)}
