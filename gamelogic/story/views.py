@@ -10,8 +10,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.urlresolvers import reverse, resolve
 from django.views.generic.list_detail import object_detail, object_list
-from gamelogic.story.forms import StoryEditForm
-from gamelogic.story.models import Story
+from story.forms import StoryEditForm
+from story.models import Story
 
 @login_required
 def story_edit(request, slug):
