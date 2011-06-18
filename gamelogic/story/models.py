@@ -9,8 +9,8 @@ class Story(models.Model):
     key = models.CharField(max_length=100)
     title = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
-    parent = models.ManyToManyField('self')
-    child = models.ManyToManyField('self')
+    parent = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_parent")
+    child = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_child")
     editorial_alpha = models.BooleanField(default=False)
     science_alpha = models.BooleanField(default=False)
     editorial_beta = models.BooleanField(default=False)
@@ -22,7 +22,7 @@ class Story(models.Model):
     modified = models.DateTimeField(_('modified'), blank=True)
     
     class Meta:
-        ordering = ('title',)
+        ordering = ('key',)
         verbose_name = _('Story')
         verbose_name_plural = _('Stories')
     
@@ -35,4 +35,4 @@ class Story(models.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('story_detail', (), {'slug': self.self})
+        return ('story_detail', (), {'slug': self.slug})

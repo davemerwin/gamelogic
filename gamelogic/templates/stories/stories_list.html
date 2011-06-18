@@ -1,9 +1,40 @@
+{% extends "base.html" %}
+
 {% block content %}
     {% if object_list %}
         <ul>
             {% for object in object_list %}
-                <li><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></li>
+                <li>
+                    <h4><a href="{% url story_detail slug=object.slug %}"><strong>{{ object.key }}</strong> | {{ object.title }}</a></h4>
+                    <p>
+                        <strong>Status:</strong>
+                        {% if object.editorial_alpha %}
+                            E-Alpha Complete
+                            {% if object.science_alpha %}
+                                | S-Alpha Complete
+                            {% endif %}
+                            {% if object.editorial_beta %}
+                                | E-Beta Complete
+                            {% endif %}
+                            {% if object.science_beta %}
+                                | S-Beta Complete
+                            {% endif %}
+                            {% if object.editorial_Gold %}
+                                | E-Gold Complete
+                            {% endif %}
+                            {% if object.science_gold %}
+                                | S-Gold Complete
+                            {% endif %}
+                        {% else %}
+                            No Review Yet
+                        {% endif %}
+                         | <a href="/admin/story/story/{{ object.id }}/">Edit in Admin</a>
+                    </p>
+                </li>
             {% endfor %}
         </ul>
+    {% else %}
+        <h1>Dude, Get to work! I need stories.</h1>
+        <a href="/admin/">Go to the admin panel and get started.</a>
     {% endif %}
 {% endblock %}

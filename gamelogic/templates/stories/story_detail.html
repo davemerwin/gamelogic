@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load markup %}
+
+{% block content %}
+    <h1>{{ object.key }} | {{ object.title }}</h1>
+    {{ object.content|textile }}
+    
+    {% if object.parent.all %}
+        <h3>This Story's Parents</h3>
+        <ul>
+            {% for parent in object.parent.all %}
+                <li><a href="{% url story_detail slug=parent.slug %}">{{ parent.key }} | {{ parent.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h5>This story has no parents</h5>
+    {% endif %}
+    
+    {% if object.child.all %}
+        <h3>This Story's Children</h3>
+        <ul>
+            {% for child in object.child.all %}
+                <li><a href="{% url story_detail slug=child.slug %}">{{ child.key }} | {{ child.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h5>This story has no children</h5>
+    {% endif %}
+    
+{% endblock %}

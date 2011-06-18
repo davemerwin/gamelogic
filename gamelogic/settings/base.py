@@ -16,6 +16,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.markup',
     'story',
+    'south',
 )
 LANGUAGE_CODE = 'en-us'
 LOGGING = {
@@ -66,8 +67,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    'kidups.context_processors.media_static_url',
-    'kidups.context_processors.media_mobile_url',
 )
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = (os.path.join(PROJECT_PATH, os.pardir, 'templates'))

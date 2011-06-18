@@ -18,11 +18,16 @@
                     {% endfor %}
                 </ul>
             {% endif %}
+            
+            <p><a href="/">Home</a></p>
     
             {% if user.is_authenticated %}            
                 <section>
                     {% block content %}{% endblock %}
                 </section>
+            {% else %}
+                <h1>To bad, so sad.</h1>
+                <h3>You're not a part of this project.</h3>
             {% endif %}
                         
         </div>

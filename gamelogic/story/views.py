@@ -40,7 +40,6 @@ def story_detail(request, slug):
         request,
         Story.objects.all(),
         slug=slug,
-        template_object_name="story",
         template_name='stories/story_detail.html',
     )
     
