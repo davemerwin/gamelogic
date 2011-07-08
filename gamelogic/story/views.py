@@ -49,7 +49,7 @@ def story_list(request):
     """ A list of Stories """
     return object_list(
         request,
-        Story.objects.all(),
+        Story.objects.filter(parent__isnull=True),
         paginate_by=25,
         template_name='stories/stories_list.html',
         allow_empty=True,
