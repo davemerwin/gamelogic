@@ -5,7 +5,7 @@
         <ul>
             {% for object in object_list %}
                 <li>
-                    <h4><a href="{% url story_detail slug=object.slug %}"><strong>{{ object.key }}</strong> | {{ object.title }}</a></h4>
+                    <h4><a href="{% url story_detail id=object.id %}"><strong>{{ object.key }}</strong> | {{ object.title }}</a></h4>
                     <p>
                         <strong>Status:</strong>
                         {% if object.editorial_alpha %}

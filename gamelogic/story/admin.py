@@ -1,5 +1,5 @@
 from django.contrib import admin
-from story.models import Story
+from story.models import Story, Question
     
 class StoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('key',)}
@@ -8,3 +8,4 @@ class StoryAdmin(admin.ModelAdmin):
     list_filter = ('key','title', 'modified', 'editorial_alpha', 'science_alpha', 'editorial_beta', 'science_beta', 'editorial_gold', 'science_gold',)
     
 admin.site.register(Story, StoryAdmin)
+admin.site.register(Question)

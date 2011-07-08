@@ -11,20 +11,20 @@ from django.contrib import messages
 from django.core.urlresolvers import reverse, resolve
 from django.views.generic.list_detail import object_detail, object_list
 from story.forms import StoryEditForm
-from story.models import Story
+from story.models import Story, Question
 
 @login_required
-def story_edit(request, slug):
+def story_edit(request, id):
     """ Edit a Story """
     messages.success(request, "Your Story was edited!")
 
-    story = get_object_or_404(Story, slug=slug)
+    story = get_object_or_404(Story, id=id)
     if request.method == 'POST':
         form = StoryEditForm(request.POST, instance=story)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(
-                reverse('story_detail', kwargs={'slug': slug}))
+                reverse('story_detail', kwargs={'id': id}))
     else:
         form = StoryEditForm()
 
@@ -34,13 +34,14 @@ def story_edit(request, slug):
     }, context_instance=RequestContext(request))
     
 @login_required
-def story_detail(request, slug):
+def story_detail(request, id):
     """ A Story """
     return object_detail(
         request,
         Story.objects.all(),
-        slug=slug,
+        object_id=id,
         template_name='stories/story_detail.html',
+        extra_context={'questions': Question.objects.filter(story_question_appears_on=id)},
     )
     
 @login_required

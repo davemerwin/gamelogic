@@ -19,7 +19,11 @@
                 </ul>
             {% endif %}
             
-            <p><a href="/">Home</a></p>
+            <p>
+                <a href="/">Home</a>
+                {% for parent in object.parent.all %}&nbsp;Go to: <a href="{% url story_detail id=parent.id %}">{{ parent.key }} | {{ parent.title }}</a>
+                {% endfor %}
+            </p>
     
             {% if user.is_authenticated %}            
                 <section>

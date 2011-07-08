@@ -10,7 +10,7 @@ class Story(models.Model):
     title = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
     parent = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_parent")
-    child = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_child")
+    # child = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_child")
     editorial_alpha = models.BooleanField(default=False)
     science_alpha = models.BooleanField(default=False)
     editorial_beta = models.BooleanField(default=False)
@@ -36,3 +36,15 @@ class Story(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('story_detail', (), {'slug': self.slug})
+        
+class Question(models.Model):
+    question = models.CharField(blank=True, max_length=255)
+    story_question_appears_on = models.ForeignKey(Story, related_name="story_question")
+    story_question_answer_goes_to = models.ForeignKey(Story, related_name="story_destination")
+    
+    class Meta:
+        verbose_name = _('Question')
+        verbose_name_plural = _('Questions')
+        
+    def __unicode__(self):
+        return self.question

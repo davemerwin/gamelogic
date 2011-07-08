@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^(?P<slug>[\w-]+)/edit/$', views.story_edit, name='story_edit'),
-    url(r'^(?P<slug>[\w-]+)/$', views.story_detail, name='story_detail'),
+    url(r'^(?P<id>\d+)/edit/$', views.story_edit, name='story_edit'),
+    url(r'^(?P<id>\d+)/$', views.story_detail, name='story_detail'),
     url(r'^$', views.story_list, name="story_list"),
 )
