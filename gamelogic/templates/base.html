@@ -21,7 +21,9 @@
             
             <p>
                 <a href="/">Home</a>
-                {% for parent in object.parent.all %}&nbsp;Go to: <a href="{% url story_detail id=parent.id %}">{{ parent.title }}</a>, {% endfor %}
+                {% if object.parent.all %}
+                    &nbsp;Go to:&nbsp;{% for parent in object.parent.all %}<a href="{% url story_detail id=parent.id %}">{{ parent.title }}</a>, {% endfor %}
+                {% endif %}
             </p>
     
             {% if user.is_authenticated %}            
