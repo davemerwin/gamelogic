@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load markup %}
+{% load markup comments %}
 
 {% block content %}
     <h1>{{ object.key }} | {{ object.title }}</h1>
@@ -13,5 +13,22 @@
             {% endfor %}
         </ul>
     {% endif %}
+    
+    {% get_comment_list for object as comment_list %}
+    
+    {% if comment_list %}
+        <h3>Previous Editor's Comments</h3>
+        <ol>
+            {% for comment in comment_list %}
+                <li>
+                    {{ comment.comment }}
+                    <p class="comment_meta">{{ comment.submit_date }} - {{ comment.name }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    
+    <h3>Leave an Editorial Comment</h3>
+    {% render_comment_form for object %}
     
 {% endblock %}
