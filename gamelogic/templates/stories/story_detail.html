@@ -16,14 +16,14 @@
             'id': 'playerID',
             'width': '480',
             'height': '270',
-            'file': '{{ object.media.url }}'
+            'file': '{{ object.media.media.url }}'
           });
         </script>
     {% endif %}
     
     {% if object.image %}
         <figure class="lrg_p_img">
-            <img src="{{ object.image.url }}">
+            <img src="{{ object.image.image.url }}">
         </figure>
     {% endif %}
     

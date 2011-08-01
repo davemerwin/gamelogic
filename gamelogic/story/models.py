@@ -4,13 +4,49 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 
+class Media(models.Model):
+    name = models.CharField(max_length=100)
+    media = models.FileField(upload_to="story_media")
+    created = models.DateTimeField(_('created'), default=datetime.now, blank=True)
+    modified = models.DateTimeField(_('modified'), blank=True)
+    
+    class Meta:
+        verbose_name = _('Media')
+        verbose_name_plural = _('Media')
+    
+    def save(self, force_insert=False, force_update=False):
+        self.modified = datetime.now()
+        super(Media, self).save(force_insert, force_update)
+        
+    def __unicode__(self):
+        return self.name
+        
+class Image(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.FileField(upload_to="story_image")
+    created = models.DateTimeField(_('created'), default=datetime.now, blank=True)
+    modified = models.DateTimeField(_('modified'), blank=True)
+
+    class Meta:
+        verbose_name = _('Image')
+        verbose_name_plural = _('Images')
+
+    def save(self, force_insert=False, force_update=False):
+        self.modified = datetime.now()
+        super(Image, self).save(force_insert, force_update)
+        
+    def __unicode__(self):
+        return self.name
+
 class Story(models.Model):
     """ The Story Object """
     key = models.CharField(max_length=100)
     title = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
-    media = models.FileField(upload_to="story_media", blank=True, null=True)
-    image = models.ImageField(upload_to="story_image", blank=True, null=True)
+    # media = models.FileField(upload_to="story_media", blank=True, null=True)
+    media = models.ForeignKey(Media, blank=True, null=True)
+    #image = models.ImageField(upload_to="story_image", blank=True, null=True)
+    image = models.ForeignKey(Image, blank=True, null=True)
     parent = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_parent")
     # child = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_child")
     editorial_alpha = models.BooleanField(default=False)
