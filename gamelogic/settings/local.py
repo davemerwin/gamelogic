@@ -22,4 +22,13 @@ DEBUG = True
 #MIDDLEWARE_CLASSES += (
 #    'debug_toolbar.middleware.DebugToolbarMiddleware',
 #)
+MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, '..', 'media', 'dynamic')
+MEDIA_URL = '/media/dynamic/'
+STATIC_ROOT = ''
+STATIC_URL = '/media/static/'
+STATICFILES_DIRS = (os.path.join(PROJECT_PATH, os.pardir, '..', 'media', 'static'),)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 TEMPLATE_DEBUG = DEBUG

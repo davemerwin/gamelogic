@@ -10,3 +10,12 @@ DATABASES = {
     }
 }
 DEBUG = False
+MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, '..', '..', '..', 'gamelogic_media', 'dynamic')
+MEDIA_URL = '/media/dynamic/'
+STATIC_ROOT = ''
+STATIC_URL = '/media/static/'
+STATICFILES_DIRS = (os.path.join(PROJECT_PATH, os.pardir, '..', '..', '..', 'gamelogic_media', 'static'),)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)

@@ -9,6 +9,7 @@ class Story(models.Model):
     key = models.CharField(max_length=100)
     title = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
+    media = models.FileField(upload_to="story_media")
     parent = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_parent")
     # child = models.ManyToManyField('self', symmetrical=False, blank=True, null=True, related_name="story_child")
     editorial_alpha = models.BooleanField(default=False)

@@ -4,6 +4,11 @@
 
 {% block content %}
     <h1>{{ object.key }} | {{ object.title }}</h1>
+    
+    {% if object.media %}
+        
+    {% endif %}
+    
     {{ object.content|textile }}
     
     {% if questions %}
