@@ -4,3 +4,4 @@
 .svn
 whoosh/
 *.sass-cache*
+*migrations/*

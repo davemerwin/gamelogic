@@ -5,3 +5,4 @@ Django
 -e git+http://github.com/robhudson/django-debug-toolbar.git#egg=debug
 docutils
 textile
+PIL

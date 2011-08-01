@@ -19,6 +19,12 @@
         </script>
     {% endif %}
     
+    {% if object.image %}
+        <figure class="lrg_p_img">
+            <img src="{{ object.image.url }}">
+        </figure>
+    {% endif %}
+    
     {{ object.content|textile }}
     
     {% if questions %}
