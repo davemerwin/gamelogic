@@ -5,6 +5,8 @@
 {% block content %}
     <h1>{{ object.key }} | {{ object.title }}</h1>
     
+    <h3><a href="/admin/story/story/{{ object.id }}/">Edit story in admin</a></h3>
+    
     {% if object.media %}
         <div id='mediaplayer'></div>
 
