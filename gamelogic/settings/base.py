@@ -50,24 +50,13 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'gamelogic.urls'
 SECRET_KEY = 'hr5tyz^+++pu-#6i3ngv&e6x8u5%8-5ro0hsl$8gly&jd(=hv9'
 SITE_ID = 1
-STATIC_ROOT = ''
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'django.core.context_processors.static',
 )
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = (os.path.join(PROJECT_PATH, os.pardir, 'templates'))

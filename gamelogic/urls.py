@@ -1,5 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from gamelogic.story import views
 admin.autodiscover()
 
@@ -13,3 +15,12 @@ urlpatterns = patterns('',
     url(r'^(?P<id>\d+)/$', views.story_detail, name='story_detail'),
     url(r'^$', views.story_list, name="story_list"),
 )
+
+urlpatterns += staticfiles_urlpatterns()
+    
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/dynamic/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   )

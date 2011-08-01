@@ -10,10 +10,6 @@ class StoryAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question','story_question_appears_on', 'story_question_answer_goes_to',)
     list_filter = ('story_question_appears_on', 'story_question_answer_goes_to',)
-    
-class MediaAdmin(admin.ModelAdmin):
-    list_display = ('media',)
-    
-admin.site.register(Media, MediaAdmin)
+
 admin.site.register(Story, StoryAdmin)
 admin.site.register(Question, QuestionAdmin)

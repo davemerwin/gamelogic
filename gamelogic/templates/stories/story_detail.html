@@ -6,7 +6,17 @@
     <h1>{{ object.key }} | {{ object.title }}</h1>
     
     {% if object.media %}
-        
+        <div id='mediaplayer'></div>
+
+        <script type="text/javascript">
+          jwplayer('mediaplayer').setup({
+            'flashplayer': '{{ STATIC_URL }}jwplayer/player.swf',
+            'id': 'playerID',
+            'width': '480',
+            'height': '270',
+            'file': '{{ object.media.url }}'
+          });
+        </script>
     {% endif %}
     
     {{ object.content|textile }}
