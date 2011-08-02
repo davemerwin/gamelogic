@@ -9,7 +9,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-DEBUG = False
+DEBUG = True
 MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, '..', '..', '..', 'gamelogic_media', 'dynamic')
 MEDIA_URL = '/media/dynamic/'
 STATIC_ROOT = ''
