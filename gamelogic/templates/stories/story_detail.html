@@ -14,6 +14,9 @@
             var so = new SWFObject('{{ STATIC_URL }}jwplayer/player.swf','playerID','480','270','9');
             so.addParam('allowfullscreen','true');
             so.addParam('allowscriptaccess','always');
+            so.addParam('viral.onpause','false');
+            so.addParam('viral.oncomplete','false');
+            so.addParam('viral.allowmenu','false');
             so.addVariable('file', '{{ object.media.media.url }}');
             so.write('mediaplayer');
         </script>
