@@ -8,15 +8,13 @@
     <h3><a href="/admin/story/story/{{ object.id }}/">Edit story in admin</a></h3>
     
     {% if object.media %}
-        <div id='mediaplayer'></div>
+        <div id='mediaplayer'>Loading...</div>
 
         <script type="text/javascript">
           jwplayer('mediaplayer').setup({
             'flashplayer': '{{ STATIC_URL }}jwplayer/player.swf',
-            'id': 'playerID',
             'width': '480',
             'height': '270',
-            'plugins': '',
             'file': '{{ object.media.media.url }}'
           });
         </script>
