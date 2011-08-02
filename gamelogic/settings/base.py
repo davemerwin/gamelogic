@@ -51,7 +51,7 @@ ROOT_URLCONF = 'gamelogic.urls'
 SECRET_KEY = 'hr5tyz^+++pu-#6i3ngv&e6x8u5%8-5ro0hsl$8gly&jd(=hv9'
 SITE_ID = 1
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
