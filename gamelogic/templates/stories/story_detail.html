@@ -11,7 +11,7 @@
         <div id='mediaplayer'>Loading...</div>
         
         <script type="text/javascript">
-            var so = new SWFObject('{{ STATIC_URL }}jwplayer/','playerID','480','270','9');
+            var so = new SWFObject('{{ STATIC_URL }}jwplayer/player.swf','playerID','480','270','9');
             so.addParam('allowfullscreen','true');
             so.addParam('allowscriptaccess','always');
             so.addVariable('file', '{{ object.media.media.url }}');
