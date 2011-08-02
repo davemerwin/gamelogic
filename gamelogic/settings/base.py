@@ -61,7 +61,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = (os.path.join(PROJECT_PATH, os.pardir, 'templates'))
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
+    'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
 TIME_ZONE = 'PST8PDT'
