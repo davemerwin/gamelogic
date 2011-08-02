@@ -9,15 +9,15 @@
     
     {% if object.media %}
         <div id='mediaplayer'>Loading...</div>
-
+        
         <script type="text/javascript">
-          jwplayer('mediaplayer').setup({
-            'flashplayer': '{{ STATIC_URL }}jwplayer/player.swf',
-            'width': '480',
-            'height': '270',
-            'file': '{{ object.media.media.url }}'
-          });
+            var so = new SWFObject('{{ STATIC_URL }}jwplayer/','playerID','480','270','9');
+            so.addParam('allowfullscreen','true');
+            so.addParam('allowscriptaccess','always');
+            so.addVariable('file', '{{ object.media.media.url }}');
+            so.write('mediaplayer');
         </script>
+        
     {% endif %}
     
     {% if object.image %}
