@@ -4,7 +4,7 @@
           {% if next %}<div><input type="hidden" name="next" value="{{ next }}" /></div>{% endif %}
 
     {% endcomment %}
-  {% if next %}<div><input type="hidden" name="next" value="/{{ object.id }}/" /></div>{% endif %}
+  {% if next %}<div><input type="hidden" name="next" value="{% url story_detail %}" /></div>{% endif %}
   {% for field in form %}
     {% if field.is_hidden %}
       <div>{{ field }}</div>
