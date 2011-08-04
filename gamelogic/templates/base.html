@@ -25,6 +25,14 @@
 </head>
 <body>
     
+        <div class="global_nav">
+            {% if user.is_authenticated %}
+                <a href="/logout/">Logout</a>
+            {% else %}
+                <a href="/login/">Login</a>
+            {% endif %}
+        </div>
+    
         <div id="content">
         
             {% if messages %}
