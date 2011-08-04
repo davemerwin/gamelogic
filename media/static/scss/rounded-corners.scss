@@ -1,0 +1,76 @@
+// These are the default rounded corner mixins
+// Set the variable for the corners when the mixin is called
+
+@mixin full_round($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin top_round($radius) {
+    $side: top;
+    
+    -moz-border-top-left-radius: $radius;
+    -webkit-border-topleft-radius: $radius;
+    border-top-left-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    -webkit-border-topright-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin bottom_round($radius) {
+    $side: bottom;
+    
+    -moz-border-bottom-left-radius: $radius;
+    -webkit-border-bottomleft-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -webkit-border-bottomright-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin left_round($radius) {
+    $side: left;
+    
+    -moz-border-top-#{$side}-radius: $radius;
+    -webkit-border-top#{$side}-radius: $radius;
+    border-top-#{$side}-radius: $radius;
+    -moz-border-bottom-#{$side}-radius: $radius;
+    -webkit-border-bottom#{$side}-radius: $radius;
+    border-bottom-#{$side}-radius: $radius;
+}
+
+@mixin left_top_round($radius) {
+    $side: left;
+    
+    -moz-border-top-#{$side}-radius: $radius;
+    -webkit-border-top#{$side}-radius: $radius;
+    border-top-#{$side}-radius: $radius;
+}
+
+@mixin left_bottom_round($radius) {
+    $side: left;
+    
+    -moz-border-bottom-#{$side}-radius: $radius;
+    -webkit-border-bottom#{$side}-radius: $radius;
+    border-bottom-#{$side}-radius: $radius;
+}
+
+@mixin right_round($radius) {
+    $side: right;
+    
+    -moz-border-top-#{$side}-radius: $radius;
+    -webkit-border-top#{$side}-radius: $radius;
+    border-top-#{$side}-radius: $radius;
+    -moz-border-bottom-#{$side}-radius: $radius;
+    -webkit-border-bottom#{$side}-radius: $radius;
+    border-bottom-#{$side}-radius: $radius;
+}
+
+@mixin right_top_round($radius) {
+    $side: right;
+    
+    -moz-border-top-#{$side}-radius: $radius;
+    -webkit-border-top#{$side}-radius: $radius;
+    border-top-#{$side}-radius: $radius;
+}

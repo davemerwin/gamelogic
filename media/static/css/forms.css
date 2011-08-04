@@ -1,0 +1,145 @@
+/*
+	Forms ~ CSS
+
+*/
+/* =Default Settings
+----------------------------------------------------------------------------*/
+/* =General
+----------------------------------------------------------------------------*/
+form {
+  margin: 0 0 1.5em; }
+  form form fieldset {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+  form form legend {
+    clear: both;
+    margin: 0;
+    padding: 0; }
+  form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #737373;
+    font-size: 0.75em; }
+  form form input[type="checkbox"] {
+    vertical-align: middle; }
+  form input[type="text"], form input[type="password"], form input[type="file"], form input[name="search"], form textarea, form select {
+    background-color: #f7f7f7;
+    border-top: 1px solid #bbbbbb;
+    border-left: 1px solid #bbbbbb;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    margin: 0 0 1.25em;
+    padding: 0.25em;
+    line-height: 1.5em;
+    font-size: 1em;
+    border-radius: 0.3125em;
+    transition-property: "background-color";
+    -webkit-transition-property: "background-color";
+    -moz-transition-property: "background-color";
+    -o-transition-property: "background-color";
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    -webkit-box-shadow: inset 0px 1px 3px 1px #d9d9d9;
+    -moz-box-shadow: inset 0px 1px 3px 1px #d9d9d9;
+    box-shadow: inset 0px 1px 3px 1px #d9d9d9; }
+  form input[type="text"], form input[type="password"], form input[type="file"] {
+    width: 40%; }
+  form textarea {
+    width: 98%;
+    height: 10em;
+    overflow: auto; }
+  form input[disabled], form input[readonly] {
+    cursor: not-allowed; }
+  form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus, form select:focus {
+    outline: none;
+    background-color: #fff; }
+  form input[type="radio"] {
+    vertical-align: text-middle; }
+  form input[type="checkbox"] {
+    vertical-align: bottom;
+    *vertical-align: baseline; }
+  form a.button, form button, form input[type="submit"], form input[type="reset"], form input[type="button"] {
+    background: #eee;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* IE10+ */
+    background: linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* W3C */
+    border: 1px solid #aaa;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    padding: 4px 12px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #444;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    margin-bottom: 20px; }
+    form a.button:hover, form button:hover, form input[type="submit"]:hover, form input[type="reset"]:hover, form input[type="button"]:hover {
+      color: #222;
+      background: #eee;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      /* Opera11.10+ */
+      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      /* IE10+ */
+      background: linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      /* W3C */
+      border: 1px solid #888;
+      border-top: 1px solid #aaa;
+      border-left: 1px solid #aaa; }
+    form a.button:active, form button:active, form input[type="submit"]:active, form input[type="reset"]:active, form input[type="button"]:active {
+      background: #eee;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.3)), color-stop(100%, rgba(255, 255, 255, 0.3)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+      /* Opera11.10+ */
+      background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+      /* IE10+ */
+      background: linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%);
+      /* W3C */
+      border: 1px solid #888;
+      border-bottom: 1px solid #aaa;
+      border-right: 1px solid #aaa; }
+    form a.button .full-width, form button .full-width, form input[type="submit"] .full-width, form input[type="reset"] .full-width, form input[type="button"] .full-width {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      text-align: center; }
+  form .form_block {
+    position: relative; }
+  form .error {
+    color: #ca2400;
+    -moz-border-radius: 0.313;
+    -webkit-border-radius: 0.313;
+    border-radius: 0.313;
+    /* needs responsive touch */ }
