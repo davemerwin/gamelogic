@@ -101,4 +101,8 @@ form {
         @include error;
         @include full_round(0.3125); /* needs responsive touch */
     }
+
+	p {
+		margin-bottom:0;
+	}
 }
