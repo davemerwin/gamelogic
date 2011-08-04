@@ -37,6 +37,7 @@ LOGGING = {
         },
     }
 }
+LOGIN_REDIRECT_URL = "/"
 MANAGERS = ADMINS
 MEDIA_ROOT = ''
 MEDIA_URL = ''
