@@ -1,10 +1,6 @@
 {% load comments i18n %}
 <form action="{% comment_form_target %}" method="post">{% csrf_token %}
-    {% comment %}
-          {% if next %}<div><input type="hidden" name="next" value="{{ next }}" /></div>{% endif %}
-
-    {% endcomment %}
-  {% if next %}<div><input type="hidden" name="next" value="/{{ form.object.id }}/" /></div>{% endif %}
+  {% if next %}<div><input type="hidden" name="next" value="{{ next }}" /></div>{% endif %}
   {% for field in form %}
     {% if field.is_hidden %}
       <div>{{ field }}</div>
