@@ -34,7 +34,7 @@
     {% if questions %}
         <ul>
             {% for q in questions %}
-                <li><a href="/{{ q.story_question_answer_goes_to.id }}/">{{ q.question }}</a>  {{ q.story_question_answer_goes_to.title }}</li>
+                <li><a href="/{{ q.story_question_answer_goes_to.id }}/">{{ q.question }}</a> - {{ q.story_question_answer_goes_to.title }}</li>
             {% endfor %}
         </ul>
     {% endif %}
