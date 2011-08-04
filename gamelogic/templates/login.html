@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="page_title">Log In</h1>
+    <form method="post" action="." class="account_form" id="login_form">
+        {% csrf_token %}
+        {% include "snippets/form_block.html" %}
+        <div class="form_block"><input type="submit" value="Login" /></div>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <div class="clear"></div>
+    {% comment %}
+            <h4 class="get_your_own_account"><a href="/accounts/register/">Get Your Own Account</a></h4>
+    <p><a href="{% url django.contrib.auth.views.password_reset %}">Forgot your password?</a></p>
+    {% endcomment %}
+
+{% endblock %}
