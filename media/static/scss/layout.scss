@@ -60,9 +60,20 @@
 
 /* =General
 ----------------------------------------------------------------------------*/
-#content {
-    width:80%;
-    padding:3em 10%;
+body {
+	background: #fafafa; /* Old browsers */
+    background: -moz-linear-gradient(top, #fafafa 33%, #f2f2f2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(33%,#fafafa), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* W3C */
+    -webkit-box-shadow: 0px 1px 3px 1px #dbdbdb;
+    -moz-box-shadow: 0px 1px 3px 1px #dbdbdb;
+    box-shadow: 0px 1px 3px 1px #dbdbdb;
+    background-clip:border-box;
+    border:5px solid #fff;
 }
 
 footer {
@@ -109,21 +120,15 @@ a {
 /* =Content
 ----------------------------------------------------------------------------*/
 #content {
-    padding:3.5em 5%;
-    background: #fafafa; /* Old browsers */
-    background: -moz-linear-gradient(top, #fafafa 33%, #f2f2f2 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(33%,#fafafa), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
-    background: linear-gradient(top, #fafafa 33%,#f2f2f2 100%); /* W3C */
+	width:60%;
+    padding:3em 10%;
+	margin:3em 10%;
+    background: #fff;
     -webkit-box-shadow: 0px 1px 3px 1px #dbdbdb;
     -moz-box-shadow: 0px 1px 3px 1px #dbdbdb;
     box-shadow: 0px 1px 3px 1px #dbdbdb;
     background-clip:border-box;
-    border:5px solid #fff;
-    @include full_round(0.5em);
+    border:1px solid #fff;
 }
 
 /* =Aside
@@ -176,18 +181,6 @@ a {
 
 /* iPad Portrait/Browser */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    
-    #content {
-        width:100%;
-        padding:1em 5%;
-        border:none;
-        float:none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        @include full_round(0em);
-        background:#fff;
-    }
     
 }
 
